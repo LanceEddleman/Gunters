@@ -27,7 +27,7 @@ p {
     background-color: #000;
     color: #fff;
     font-size: 30px;
-    text-shadow: 1px 1px cornflowerblue;
+    text-shadow: 2px 3px cornflowerblue;
     text-align: center;
     line-height: 50px;
 }
@@ -45,14 +45,14 @@ p {
     bottom: 0px;
     height: 20px;
     width: 100%;
-    text-align: center;
     background-color: #000;
+/*    text-align: center;
     color: #fff;
     font-size: 18px;
     text-shadow: 1px 1px cornflowerblue;
     text-align: center;
     line-height: 18px;
-}
+*/}
 
 #fire {
 	position: absolute;
@@ -84,8 +84,7 @@ p {
 	font-weight: bold;
     overflow-y: auto;
     width: 425px;
-    height: 450px;
-    text-shadow: 0.5px 0px red;
+    height: 430px;
 }
 
 #next {
@@ -117,29 +116,29 @@ p {
 	padding-left: 20px;
 	color: #000;
     width: 425px;
-    height: 450px;
+    height: 430px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.red {
+    text-shadow: 0.5px 0px red;
+}
+.green {
     text-shadow: 0.5px 0px green;
 }
 
 .frow {
     width: 100%;
-    height: 20px;
 }
 
 .tasks {
     width: 175px;
-    height: 20px;
     float: left;
-    line-height: 20px;
 }
 
 .notes {
-    width: 230px;
-    height: 20px;
-    font-size: smaller;
-    line-height: 20px;
+    width: 250px;
     float: left;
 }
 
