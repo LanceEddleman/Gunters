@@ -1,0 +1,61 @@
+{
+  "name": "qaSprintIssues",
+  "version": "1.0.2",
+  "size": {
+    "width": 5,
+    "height": 2.5
+  },
+  "mapping": [
+    {
+      "dataSetId": "367ebea1-f8f7-4e1a-b132-ab32bafca57f",
+      "alias": "qasi",
+      "fields": [
+        {
+          "alias": "squad",
+          "columnName": "Squad"
+        },
+        {
+          "alias": "status",
+          "columnName": "Status"
+        },
+        {
+          "alias": "jira",
+          "columnName": "JiraNumber"
+        },
+        {
+          "alias": "summary",
+          "columnName": "Summary"
+        },
+        {
+          "alias": "notes",
+          "columnName": "Notes"
+        },
+        {
+          "alias": "reason",
+          "columnName": "Reason"
+        },
+        {
+          "alias": "sprint",
+          "columnName": "Sprint"
+        },
+        {
+          "alias": "test",
+          "columnName": "Left2Test"
+        },
+        {
+          "alias": "sprintlist",
+          "columnName": "SprintList"
+        },
+        {
+          "alias": "statuslist",
+          "columnName": "StatusList"
+        },
+        {
+          "alias": "squadlist",
+          "columnName": "SquadList"
+        }
+      ]
+    }
+  ],
+  "id": "7aeefdc5-7549-46dc-b242-3f93247d0d20"
+}

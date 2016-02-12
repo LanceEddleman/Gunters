@@ -1,0 +1,87 @@
+
+// -- Taken from map domoapp
+body {
+  background-color: 707F8A;
+  text-align: center;
+  vertical-align: center;
+  margin: 20px 10px 0;
+}
+
+img {
+    max-width: 95%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+area:link, 
+area:hover, 
+area:active, 
+area:focus {
+   
+   position: absolute;
+  }
+
+
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#99ccee;
+            font-size:16px;
+            font-weight:300;
+            color: white;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background: #666666;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background: #666666;
+        color: white;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+
+        }
+ 
+        .tab.active {
+            display:block;
+        }

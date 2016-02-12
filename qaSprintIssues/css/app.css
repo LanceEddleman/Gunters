@@ -1,0 +1,175 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/fonts/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: OpenSans;
+    src: url(/fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: OpenSans;
+    src: url(/fonts/OpenSans-ExtraBold.ttf);
+    font-weight: bolder;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+//  background-color: #99ccee;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+table thead th{
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {}
+
+#page {
+	height: 100%;
+	width: 100%;
+}
+
+#header {
+    position: absolute;
+    width: 1165px;
+    height: 100px;
+    z-index: 600;
+}
+
+#header2 {
+    position: absolute;
+    width: 1165px;
+    height: 100px;
+    z-index: 5;
+}
+
+.header {
+    z-index: 100;
+    padding-right: 35px;
+    float: right;
+}
+
+.header2 {
+    z-index: 1;
+    padding-right: 28px;
+    padding-top: 7px;
+    float: right;
+}
+
+.domoFont {
+    font-family: OpenSans;
+    font-size: 90px;
+    font-weight: 700;
+    letter-spacing: -16;
+    line-height: 90px;
+}
+
+#nav {
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 80;
+}
+
+#navItem {
+//    padding-top: 15px;
+}
+
+#content {
+    position: absolute;
+    top: 135px;
+	height: 530px;
+    width: 1165px;
+    overflow: hidden;
+//    background-color: red;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    height: 20px;
+    width: 100%;
+//    background-color: black;
+}
+
+.tableHeader {
+    padding: 0px;
+    margin: 0px;
+}
+
+#fire {
+    height: 540px;
+    width: 1165px;
+//    background-color: gray;
+//    overflow-x: auto;
+    overflow: hidden;
+}
+
+#fireText {
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	color: #000;
+//    overflow-x: auto;
+//    overflow-y:auto;
+    overflow: auto;
+//    height: 472px;
+//    width: 1155px;
+    height: 87.4%;
+    width: 99.2%;
+//    background-color: yellow;
+}
+
+.pTop {padding-top: 15px;}
+
+
+.title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+	color: #000;
+	font-weight: bold;
+    background-color: green;
+}
+.infoTitle {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    background-color: green;
+}
+
+/* Alignment */
+.rightTx {text-align: right;}
+
+/* Field Widths */
+.wsquad {width: 120px; // background-color: #99cc4e;}
+.wstatus {width: 120px; // background-color: #98a14e;}
+.wjira {width: 100px; // background-color: #99cc2e;}
+.wsummary {width: 175px; // background-color: #98a14e;}
+.wnotes {width: 175px; // background-color: #99cc5e;}
+.wreason {width: 175px; // background-color: #98a14e;}
+.wsprint {width: 120px; // background-color: #99cc7b;}
+.wtest {width: 375px; // background-color: #98a14e;}
+
+/* Colors */
+.domoBlue {color: #99ccee;}
+.domoBlueBG {background-color: #99ccee;}
+.darkBlue {color: #707F8A;}
+.darkBlueBG {background-color: #707F8A;}
+.white {color: #fff;}
+.whiteBG {background-color: #fff;}
+.red {text-shadow: 0.5px 0px red;}
+.green {text-shadow: 0.5px 0px green;}
