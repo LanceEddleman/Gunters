@@ -13,7 +13,7 @@
     font-weight: bolder;
 }
 
-body{
+body {
     margin: 0px;
     padding: 0px;
 //  background-color: #99ccee;
@@ -24,13 +24,24 @@ div {
   padding: 0px;
 }
 
-table thead th{
+table {
     border-collapse: collapse;
     margin: 0px;
     padding: 0px;
 }
+thead, th, tr, td, tbody {
+    margin: 0px;
+    padding: 0px;
+}
 
-p {}
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clear {
+  clear: both;			
+}
 
 #page {
 	height: 100%;
@@ -103,8 +114,12 @@ p {}
 }
 
 .tableHeader {
-    padding: 0px;
-    margin: 0px;
+    font-size: bigger;
+    font-weight: bolder;
+}
+
+.tableRows {
+    
 }
 
 #fire {
@@ -121,8 +136,6 @@ p {}
 	padding-bottom: 10px;
 	padding-left: 5px;
 	color: #000;
-//    overflow-x: auto;
-//    overflow-y:auto;
     overflow: auto;
 //    height: 472px;
 //    width: 1155px;
@@ -136,11 +149,12 @@ p {}
 
 .title {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 9px;
     text-align: center;
 	color: #000;
 	font-weight: bold;
-    background-color: green;
+    border-bottom: 1px solid black;
+//    background-color: green;
 }
 .infoTitle {
     padding-top: 10px;
@@ -151,18 +165,15 @@ p {}
     background-color: green;
 }
 
-/* Alignment */
-.rightTx {text-align: right;}
-
 /* Field Widths */
-.wsquad {width: 120px; // background-color: #99cc4e;}
-.wstatus {width: 120px; // background-color: #98a14e;}
-.wjira {width: 100px; // background-color: #99cc2e;}
-.wsummary {width: 175px; // background-color: #98a14e;}
-.wnotes {width: 175px; // background-color: #99cc5e;}
-.wreason {width: 175px; // background-color: #98a14e;}
-.wsprint {width: 120px; // background-color: #99cc7b;}
-.wtest {width: 375px; // background-color: #98a14e;}
+.wsquad {width: 120px;}
+.wstatus {width: 120px}
+.wjira {width: 100px;}
+.wsummary {width: 175px;}
+.wnotes {width: 175px;}
+.wreason {width: 175px;}
+.wsprint {width: 120px;}
+.wtest {width: 375px;}
 
 /* Colors */
 .domoBlue {color: #99ccee;}
@@ -173,3 +184,4 @@ p {}
 .whiteBG {background-color: #fff;}
 .red {text-shadow: 0.5px 0px red;}
 .green {text-shadow: 0.5px 0px green;}
+.oddRow {background-color: lightgrey;}
