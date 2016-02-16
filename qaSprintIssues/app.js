@@ -1,7 +1,7 @@
 // Variables
     console.debug();
 //    var dataSourceID = 'qasi';
-    var sectionTitle = '<div class="tableHeader title"><table id="dataTable"><tr><td><div class="wsquad">Squad</div></td><td><div class="wstatus">Status</div></td><td><div class="wjira">Jira #</div></td><td><div class="wsummary">Summary</div></td><td><div class="wnotes">Notes</div></td><td><div class="wreason">Reason</div></td><td><div class="wsprint">Sprint</div></td><td><div class="wtest">Left 2 Test</div></td></tr></thead></div>';
+    var sectionTitle = '<div class="tableHeader title"><table id="dataTable"><tr><td><div class="wsquad">Squad</div></td><td><div class="wstatus">Status</div></td><td><div class="wjira">Jira #</div></td><td><div class="wsummary">Summary</div></td><td><div class="wnotes">Notes</div></td><td><div class="wreason">Reason</div></td><td><div class="wsprint">Sprint</div></td><td><div class="wtest">Left 2 Test</div></td></tr></table></div>';
     var fsquad = '<div class="tableRows"><table><tr><td><div class="wsquad">';
 	var fstatus = '</div></td><td><div class="wstatus">';
 	var fjira = '</div></td><td><div class="wjira">';
@@ -75,7 +75,7 @@ var today = new Date();
         location.reload(parent);
         document.getElementById("fire").innerHTML = '';
         fireDiv.append('<div id="groupTitle" class="title">Select A Release To Review</div>');
-		fireDiv.append('<div id="fireText">&nbsp;</div>');
+		fireDiv.append('<div id="fireText" class="tableRows">&nbsp;</div>');
     }
 
 // Show Slection

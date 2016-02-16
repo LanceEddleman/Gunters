@@ -2,13 +2,15 @@
     font-family: OpenSans;
     src: url(/fonts/OpenSans-Light.ttf);
 }
+
 @font-face {
-    font-family: OpenSans;
+    font-family: OpenSans-Bold;
     src: url(/fonts/OpenSans-Bold.ttf);
     font-weight: bold;
 }
+
 @font-face {
-    font-family: OpenSans;
+    font-family: OpenSans-Bolder;
     src: url(/fonts/OpenSans-ExtraBold.ttf);
     font-weight: bolder;
 }
@@ -76,7 +78,7 @@ p {
 }
 
 .domoFont {
-    font-family: OpenSans;
+    font-family: OpenSans-Bold;
     font-size: 90px;
     font-weight: 700;
     letter-spacing: -16;
@@ -117,7 +119,7 @@ p {
 }
 
 .tableRows {
-    
+    font-weight: normal;
 }
 
 #fire {
@@ -147,6 +149,8 @@ p {
     padding-bottom: 9px;
     text-align: center;
 	color: #000;
+    font-family: OpenSans-Bold;
+
 	font-weight: bold;
     border-bottom: 1px solid black;
 }
@@ -155,8 +159,6 @@ p {
     padding-bottom: 10px;
     text-align: center;
     color: #000;
-    font-weight: bold;
-    background-color: green;
 }
 
 /* Navigation Start */
@@ -208,9 +210,11 @@ p {
 .fbuttons {
 //	background: linear-gradient(to bottom, #A50038 95%, #000 100%);
 }
+
 .buttonM {
 	margin-left: 20px;
 }
+
 button {
 	width: 100px;
 //	outline: 0;
@@ -221,14 +225,15 @@ button {
 	border-radius:7px;
 	font-size: 16px;
 }
+
 /* Navigation End */
 
 .intro {
-    font-size: 90px;
+/*    font-size: 90px;
     font-weight: 700;
 	text-align: center;
 	line-height: 150px;
-}
+*/}
 
 
 /* Field Widths */
