@@ -15,7 +15,10 @@
     var groupTitle = '<div>' + titleText + '</div>';
     var fireDiv = $("#fire");
     var fireText = $("#fireText");
-
+    var sprint = 0;
+    var status = 'all';
+    var num = 9999;
+    var rCount = 0;
 
 // Current Date
 function showDate(){
@@ -28,45 +31,11 @@ var today = new Date();
    console.log('Today is: ' + viewToday);
 }
 
-
-// Fire -------------------------
-//function dataStart(){
-//	console.log('run dataStart ****');
-//	domo.get('/data/v1/qasi?filter=status = "Fire"').then(function(qasi){
-//		console.log("qasi", qasi);
-//		fireText.append(sectionTitle); // add title section
-//
-//		qasi.forEach(function(item) {
-//            console.log(item);
-//			// fireText.append('<div><table><thead><tr><th><div class="wsquad">' + item.squad + '</div></th><th><div class="wstatus">'+ item.status +'</div></th><th><div class="wjira">'+ item.jira +'</div></th><th><div class="wsummary">'+ item.summary +'</div></th><th><div class="wnotes">'+ item.notes +'</div></th><th><div class="wreason">'+ item.reason +'</div></th><th><div class="wsprint">'+ item.sprint +'</div></th><th><div class="wtest">'+ item.test +'</div></th></tr></thead></div>');
-//			fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-//        });
-//    });
-//}
-
-
-
-// ShowSprint -------------------------
-	function showSprint(sprint){
-		// console.log('run showSprint ###');
-		// console.log('selected Sprint was: ' + sprint);
-		domo.get('/data/v1/qasi?filter=sprint = ' + sprint).then(function(qasi){
-			// console.log("qasi", qasi);
-
-			qasi.forEach(function(item) {
-				console.log(item);
-				fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-	       });
-		});
-   }
-
-
-
 // Sprint List
 	function getSprintsList(){
 		console.log('build Sprint list');
 		var SL = $("#sprints"); // sprintlist
-		var slc = 1; // sprint list counter
+		var slc = 2; // sprint list counter
 
 		domo.get('/data/v1/qasi').then(function(qasi){
 			console.log("qasi", qasi);
@@ -83,7 +52,7 @@ var today = new Date();
 	};
 
 // User selected Sprint
-    function chooseSprint(option) {
+    function chooseSprint() {
         var option = document.getElementById("sprints").value;
         var optionText = $('#sprints :selected').text(); 
         console.log(option);console.log(optionText);
@@ -94,9 +63,10 @@ var today = new Date();
             runReset();
         }
         else {
-            document.getElementById("groupTitle").innerHTML = 'Sprint: ' + sprint;
-            document.getElementById("fireText").innerHTML = sectionTitle;
-            showSprint(sprint); // RUN showSprint
+            // document.getElementById("groupTitle").innerHTML = 'Sprint: ' + sprint;
+            // document.getElementById("fireText").innerHTML = sectionTitle;
+            // //showSprint(sprint); // RUN showSprint
+            showSelection('all',num)
         }
     }
 
@@ -107,3 +77,88 @@ var today = new Date();
         fireDiv.append('<div id="groupTitle" class="title">Select A Release To Review</div>');
 		fireDiv.append('<div id="fireText">&nbsp;</div>');
     }
+
+// Show Slection
+	function showSelection(status,num) {
+		var sprintNo = document.getElementById("sprints").value;
+		var sprint = $('#sprints :selected').text();
+		// console.log('sprint: ' + sprint + ' status: ' + status + ' num: ' + num);
+		console.log('sprintNo: ' + sprintNo + ' sprint: ' + sprint + ' status: ' + status + ' num: ' + num);
+		document.getElementById("fireText").innerHTML = sectionTitle;
+
+		if (sprintNo == 0 || sprintNo == 1) {
+			if (status == 'all') {
+	            document.getElementById("groupTitle").innerHTML = 'Sprint: ' + sprint;
+				domo.get('/data/v1/qasi?orderby=sprint descending').then(function(qasi){
+					rCount = 0;
+					qasi.forEach(function(item) {
+						console.log(item);
+						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+						rCount = rCount+1;
+			       });
+				console.log('Rows: ' + rCount);	
+				});
+			}
+			else {
+				domo.get('/data/v1/qasi?filter=status contains "fire" &limit='+ num + '&orderby=sprint descending').then(function(qasi){
+					rCount = 0;
+					qasi.forEach(function(item) {
+						console.log(item);
+						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+						rCount = rCount+1;
+			       });
+				console.log('Rows: ' + rCount);	
+				});
+			}
+		}
+		else {
+			if (status == 'all') {
+	            document.getElementById("groupTitle").innerHTML = 'Sprint: ' + sprint;
+				domo.get('/data/v1/qasi?filter=sprint = ' + sprint + '&limit='+ num + '&orderby=sprint descending').then(function(qasi){
+					rCount = 0;
+					qasi.forEach(function(item) {
+						console.log(item);
+						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+						rCount = rCount+1;
+			       });
+				console.log('Rows: ' + rCount);	
+				});
+			}
+			else {
+	            document.getElementById("groupTitle").innerHTML = 'Sprint: ' + sprint;
+				domo.get('/data/v1/qasi?filter=sprint = ' + sprint + ',status contains "fire" &limit='+ num + '&orderby=sprint descending').then(function(qasi){
+					rCount = 0;
+					qasi.forEach(function(item) {
+						console.log(item);
+						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+						rCount = rCount+1;
+			       });
+				console.log('Rows: ' + rCount);	
+				});
+			}
+		}
+	}
+
+// ShowSprint -------------------------  unused
+	function showSprint(sprint){
+		// console.log('run showSprint ###'); console.log('selected Sprint was: ' + sprint);
+		if (sprint == "All Issues") {
+			domo.get('/data/v1/qasi?orderby=sprint descending').then(function(qasi){
+				qasi.forEach(function(item) {
+					console.log(item);
+					fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+				});
+			});
+		}
+		else {
+			domo.get('/data/v1/qasi?filter=sprint = ' + sprint).then(function(qasi){
+				qasi.forEach(function(item) {
+					console.log(item);
+					fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
+		       });
+			});
+		}
+   }
+
+
+

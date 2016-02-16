@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="/css/app.css" />
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-        <script>$(document).ready(function(){showDate();getSprintsList();});</script>
+        <script>$(document).ready(function(){getSprintsList();showDate();});</script>
     </head>
   <body class="domoBlueBG">
 	<div id="page">
@@ -11,15 +11,24 @@
 		<div id="header2"><div class="header2 domoFont darkBlue">DOMO&nbsp;-&nbsp;QA</div></div>
 		<div id="nav" class="darkBlueBG" >
 			<div id="navItem" class="pTop">
-				<select id="sprints" onchange="chooseSprint(this)">
-					<option value="0">Select Release</option>
-				</select>
+					<ul class="tabrow">
+						<li><select id="sprints" class="buttonM" onchange="chooseSprint()">
+								<option value="0">Select Release</option>
+								<option value="1">All Issues</option>
+							</select>
+						</li>
+						<li><button id="fireAll" class="fbuttons buttonM" onclick="showSelection('fire',0)">Fire Items</button></li>
+						<li><button id="fire5" class="fbuttons buttonM" onclick="showSelection('fire',5)">Fire Top 5</button></li>
+						<li><button id="fire10" class="fbuttons buttonM" onclick="showSelection('fire',10)">Fire Top 10</button></li>
+						<li><button id="allIssues" class="buttonM" onclick="showSelection('all',9999)">All Issues</button></li>
+					</ul>
+
 			</div>
 		</div>
   		<div id="content" class="whiteBG clear">
 			<div id="fire">
                 <div id="groupTitle" class="title">Select A Release To Review</div>
-				<div id="fireText">&nbsp;</div>
+				<div id="fireText" class="intro">Choose a sprint or filter option from the nav bar.</div>
 			</div>
 		</div>
 		<div id="footer" class="domoBlueBG"><div id="message"></div></div>
