@@ -1,0 +1,170 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/fonts/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url(/fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: OpenSans-Bolder;
+    src: url(/fonts/OpenSans-ExtraBold.ttf);
+    font-weight: bolder;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: OpenSans;
+    background-color: #99ccee;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+#page {
+	height: 100%;
+	width: 100%;
+//	overflow: hidden;
+}
+
+#header {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    width: 100%;
+//    background-color: #99ccee;
+//	background-color: gray;
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 2px 3px #000;
+    text-align: center;
+    line-height: 50px;
+}
+
+#content {
+    position: absolute;
+    top: 50px;
+	height: 470px;
+    width: 100%;
+//    overflow: hidden;
+//background-color: brown;
+}
+
+#footer {
+    position: absolute;
+    font-size: 16px;
+    line-height: 18px;
+    bottom: 0px;
+    right: 0px;
+    height: 20px;
+    width: 100%;
+//    background-color: #000;
+    text-align: right;
+    color: #fff;
+    padding-right: 10px;
+}
+
+.boxhw {
+    width: 930px;
+//    width: 100%;
+    height: 235px;
+}
+.hw {
+	width: 930px;
+    height: 190px;
+}
+
+
+#fire {
+//	position: absolute;
+//	background-image: url("/images/fire.gif");
+//	background-size: 235px 235px;
+//    float: left;
+//    background-color: blue;
+}
+
+#transbox {
+}
+
+.tBorder {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+#fireText {
+	color: #000;
+}
+
+#next {
+//	position: absolute;
+    background-color: red;
+//	background-image: url("/images/rock.jpg");
+//    background-repeat: no-repeat;
+//	background-size: 462px 480px;
+}
+
+#ntransbox {
+}
+
+#nextText {
+	color: #000;
+}
+
+#nextData, #fireData {
+	width: 100%;
+	overflow: auto;
+}
+
+.bgOpacity {
+//    background-color: #fff;
+    opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.right {float: right;}
+.red {text-shadow: 0.5px 0px red;}
+.green {text-shadow: 0.5px 0px green;}
+.lightG {//background-color: lightgray;}
+.smallFont {font-size: smaller;}
+
+.frow {
+//	position: absolute;
+	width: 100%;
+//	height: 20px;
+	background-color: pink;
+}
+
+.tasks {
+//	position: absolute;
+//	left: 0px;
+	width: 265px;
+	float: left;
+	padding-left: 10px;
+	background-color: green;
+}
+
+.notes {
+//	position: absolute;
+	left: 275px;
+	width: 605px;
+//	float: left;
+	padding-left: 10px;
+	background-color: orange;
+}
+
+.title {
+    text-align: center;
+	color: #000;
+	font-weight: bold;
+//    background-color: yellow;
+}

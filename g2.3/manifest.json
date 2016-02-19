@@ -1,0 +1,33 @@
+{
+  "name": "gFire.3",
+  "version": "1.0.3",
+  "size": {
+    "width": 4,
+    "height": 2
+  },
+  "mapping": [
+    {
+      "dataSetId": "b34b7088-15ff-43e8-a2e4-922cbedd5954",
+      "alias": "gZone",
+      "fields": [
+        {
+          "alias": "task",
+          "columnName": "Tasks"
+        },
+        {
+          "alias": "notes",
+          "columnName": "Notes"
+        },
+        {
+          "alias": "status",
+          "columnName": "Status"
+        },
+        {
+          "alias": "zones",
+          "columnName": "Zones"
+        }
+      ]
+    }
+  ],
+  "id": "9b41582d-7039-4230-8a14-374e56bf1e42"
+}

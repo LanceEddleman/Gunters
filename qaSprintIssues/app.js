@@ -1,3 +1,5 @@
+// googlesheet old datasource ID: 367ebea1-f8f7-4e1a-b132-ab32bafca57f
+// box excel file datasouce ID: 8cc7041a-892b-452b-9243-27528c9d1563
 // Variables
     console.debug();
 //    var dataSourceID = 'qasi';
@@ -37,7 +39,7 @@ var today = new Date();
 		var SL = $("#sprints"); // sprintlist
 		var slc = 2; // sprint list counter
 
-		domo.get('/data/v1/qasi').then(function(qasi){
+		domo.get('data/v1/qasi').then(function(qasi){
 			console.log("qasi", qasi);
 			qasi.forEach(function(item) {
 				console.log(item);
