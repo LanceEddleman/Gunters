@@ -37,7 +37,7 @@
 //		}
 //		else {
 			// fireData.append('<div class="fRow"><div class="tasks">' + item.task + '</div><div class="notes">'+ item.notes +'</div></div>');	
-			fireData.append('<div class="fRow"><div>' + item.task + '</div><div>'+ item.notes +'</div></div>');	
+			fireData.append('<div class="fRow"><div class="tasks">' + item.task + '</div><div class="notes">'+ item.notes +'</div></div>');	
 //		}
        });
     });
