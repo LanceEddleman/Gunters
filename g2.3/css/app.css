@@ -20,6 +20,7 @@ body {
     padding: 0px;
     font-family: OpenSans;
     background-color: #99ccee;
+//    overflow: hidden;
 }
 
 div {
@@ -35,154 +36,182 @@ p {
 #page {
 	height: 100%;
 	width: 100%;
-//	overflow: hidden;
 }
 
 #header {
-    position: absolute;
-    top: 0px;
-    height: 50px;
-    width: 100%;
-//    background-color: #99ccee;
-//	background-color: gray;
+	height: 50px;
+	width: calc(100% - 30px);
+}
+
+.domoFont {
+    font-family: OpenSans-Bold;
     color: #fff;
-    font-size: 30px;
-    text-shadow: 2px 3px #000;
-    text-align: center;
+    font-weight: 700;
+    letter-spacing: -2;
+    font-size: 35px;
+    text-shadow: 3px 5px #000;
+    text-align: right;
     line-height: 50px;
+    padding-right: 30px;
 }
 
 #content {
     position: absolute;
     top: 50px;
-	height: 470px;
     width: 100%;
 //    overflow: hidden;
-//background-color: brown;
+//	background-color: brown;
+	/* Firefox */
+	height: -moz-calc(100% - 80px);
+	/* WebKit */
+	height: -webkit-calc(100% - 80px);
+	/* Opera */
+	height: -o-calc(100% - 80px);
+	/* Standard */
+	height: calc(100% - 80px);
 }
 
 #footer {
     position: absolute;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 22px;
+    height: 24px;
     bottom: 0px;
     right: 0px;
-    height: 20px;
     width: 100%;
-//    background-color: #000;
     text-align: right;
     color: #fff;
     padding-right: 10px;
+    background-color: #000;
 }
 
-.boxhw {
-    width: 930px;
-//    width: 100%;
-    height: 235px;
+.sectionHW {
+    width: 100%;
+	/* Firefox */
+	height: -moz-calc(50% - 50px);
+	/* WebKit */
+	height: -webkit-calc(50% - 50px);
+	/* Opera */
+	height: -o-calc(50% - 50px);
+	/* Standard */
+	height: calc(50% - 50px);
 }
-.hw {
-	width: 930px;
-    height: 190px;
-}
-
 
 #fire {
-//	position: absolute;
-//	background-image: url("/images/fire.gif");
-//	background-size: 235px 235px;
-//    float: left;
-//    background-color: blue;
+	z-index: -5;
+	width: 100%;
+//	height: 50%;
+//	background-color: green;
 }
 
-#transbox {
-}
+#fireText, #nextText {color: #fff; text-shadow: 1px 1px #000;}
 
-.tBorder {
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-}
-#fireText {
-	color: #000;
-}
+#fireText{}
 
 #next {
-//	position: absolute;
-    background-color: red;
-//	background-image: url("/images/rock.jpg");
-//    background-repeat: no-repeat;
-//	background-size: 462px 480px;
-}
-
-#ntransbox {
-}
-
-#nextText {
-	color: #000;
+	z-index: -5;
+	width: 100%;
+//	height: 50%;
+//	background-color: blue;
 }
 
 #nextData, #fireData {
 	width: 100%;
+//	height: 50%;
 	overflow: auto;
+	/* Firefox */
+	height: -moz-calc(50% - 50px);
+	/* WebKit */
+	height: -webkit-calc(50% - 50px);
+	/* Opera */
+	height: -o-calc(50% - 50px);
+	/* Standard */
+	height: calc(50% - 50px);
+
 }
 
-.bgOpacity {
-//    background-color: #fff;
-    opacity: 0.7;
-    filter: alpha(opacity=60); /* For IE8 and earlier */
+.tBorder {
+//    border-top: 1px black solid;
+    border-bottom: 1px black solid;
 }
 
 .right {float: right;}
-.red {text-shadow: 0.5px 0px red;}
-.green {text-shadow: 0.5px 0px green;}
-.lightG {//background-color: lightgray;}
+.red {text-shadow: 1px 1px red;}
+.rFire {
+	background-image: url("/images/small_fire.png");
+    background-repeat: repeat-x;
+	background-size: 100px 10px;
+	background-position: bottom;
+	z-index: -5;
+}
+.green {text-shadow: 1px 1px green;}
+.gRock {
+	background-image: url("/images/rocks3.png");
+    background-repeat: repeat-x;
+	background-size: 100px 20px;
+	background-position: bottom;
+}
+
 .smallFont {font-size: smaller;}
 
+.sTitles {
+	background-color: #4A92C1;
+	font-family: OpenSans-Bold;
+}
+
 .fRow {
-	width: 100%;
-	background-color: pink;
+	width: 98%;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.fRowE {
+	width: 98%;
+	background-color: lightgray;
+	color: #000;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 .tasks {
-	width: 280px;
+	width: 30%;
 	float: left;
-	padding-left: 10px;
-	background-color: green;
 }
 
 .notes {
-	width: 615px;
+	width: 69%;
 	float: left;
 	padding-left: 10px;
-	background-color: orange;
 }
 
 /* Traditional clearfix */
 .clearfix:after {
-    content: ".";
+//    content: ".";
     display: block;
-    height: 0;
+    height: 0px;
     clear: both;
     visibility: hidden;
 }
+
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
 /* Custom CSS for the page layout */
-.columns .column1 {
-    float: left;
-    width: 430px;
-}
-.columns .column2 {
-    float: left;
-    width: 161px;
-}
-
-
+.columns .column1 {float: left;}
+.columns .column2 {float: left;}
 
 .title {
     text-align: center;
-	color: #000;
-	font-weight: bold;
-//    background-color: yellow;
+	color: #fff;
+	font-family: OpenSans-Bold;
+	background-color: #000;
+    font-size: 18px;
+    line-height: 24px;
 }

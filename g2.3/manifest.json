@@ -2,8 +2,8 @@
   "name": "gFire.3",
   "version": "1.0.3",
   "size": {
-    "width": 4,
-    "height": 2
+    "width": 4.5,
+    "height": 2.75
   },
   "mapping": [
     {
@@ -29,5 +29,5 @@
       ]
     }
   ],
-  "id": "9b41582d-7039-4230-8a14-374e56bf1e42"
+  "id": "fd068f16-5f97-47d4-891b-06478592eaf8"
 }
