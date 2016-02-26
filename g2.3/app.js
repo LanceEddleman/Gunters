@@ -2,7 +2,7 @@
 
 // Variables
     console.debug();
-    var sectionTitle = '<div class="fRow"><div class="tasks">Tasks</div><div class="notes">Notes</div></div>';
+    var sectionTitle = '<div id="sectionTitle" class="fRow"><div class="tasks">Tasks</div><div class="notes">Notes</div></div>';
     var fireText = $("#fireText");
     var nextText = $("#nextText");
     var fireData = $('#fireData');

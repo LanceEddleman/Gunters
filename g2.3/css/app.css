@@ -1,3 +1,74 @@
+::root{
+// domo colors ranges are listed from light to dark
+	// blues
+	color: #d9ebfd; // background
+	color: #b7daf5;
+	color: #99ccee; // Domo Blue
+	color: #73b0d7;
+	color: #4e8cba;
+	color: #31689b; // text
+	// greens
+	color: #ddf4ba;
+	color: #bbe491;
+	color: #a0d771;
+	color: #80c25d;
+	color: #559e38;
+	color: #387b26;
+	// orange
+	color: #fdecad;
+	color: #fccf84;
+	color: #fbad56;
+	color: #fb8d34;
+	color: #e45621;
+	color: #a43724;
+	// purple
+	color: #f3e4fe;
+	color: #ddc8ef;
+	color: #b391ca;
+	color: #8f6dc0;
+	color: #7940a1;
+	// teal
+	color: #d8f4de;
+	color: #abe4ca;
+	color: #8dd5be;
+	color: #68bea8;
+	color: #46998a;
+	color: #227872;
+	// pinks
+	color: #fcd7e6;
+	color: #fbb6dd;
+	color: #f395cd;
+	color: #ee76bf;
+	color: #cf51ac;
+	color: #a62a92;
+	// reds
+	color: #fddddd;
+	color: #fcbcb7;
+	color: #fd9a93;
+	color: #fd7f76;
+	color: #e45850;
+	color: #c92e25;
+	// gray to black
+	color: #818d8f;
+	color: #54585a;
+	color: #2f3132;
+	// gray scale
+	color: #f1f2f2; // background
+	color: #e4e5e5;
+	color: #d7d8d8;
+	color: #cacbcc;
+	color: #b0b1b2;
+	color: #387b26;
+	color: #a2a5a6;
+	color: #959899;
+	color: #a62a92;
+	color: #888b8c;
+	color: #7b7e80;
+	color: #6e7173;
+	color: #616466;
+	color: #54585a; // text
+};
+
 @font-face {
     font-family: OpenSans;
     src: url(/fonts/OpenSans-Light.ttf);
@@ -15,12 +86,23 @@
     font-weight: bolder;
 }
 
+html{
+	/* Firefox */
+	height: -moz-calc(100% - 40px);
+	/* WebKit */
+	height: -webkit-calc(100% - 40px);
+	/* Opera */
+	height: -o-calc(100% - 40px);
+	/* Standard */
+	height: calc(100% - 40px);
+}
+
 body {
     margin: 0px;
     padding: 0px;
     font-family: OpenSans;
     background-color: #99ccee;
-//    overflow: hidden;
+    overflow: hidden;
 }
 
 div {
@@ -45,11 +127,11 @@ p {
 
 .domoFont {
     font-family: OpenSans-Bold;
-    color: #fff;
+    color: #f1f2f2;
     font-weight: 700;
     letter-spacing: -2;
     font-size: 35px;
-    text-shadow: 3px 5px #000;
+    text-shadow: 3px 5px #31689b;
     text-align: right;
     line-height: 50px;
     padding-right: 30px;
@@ -59,8 +141,6 @@ p {
     position: absolute;
     top: 50px;
     width: 100%;
-//    overflow: hidden;
-//	background-color: brown;
 	/* Firefox */
 	height: -moz-calc(100% - 80px);
 	/* WebKit */
@@ -80,9 +160,9 @@ p {
     right: 0px;
     width: 100%;
     text-align: right;
-    color: #fff;
+    color: #f1f2f2;
     padding-right: 10px;
-    background-color: #000;
+    background-color: #2f3132;
 }
 
 .sectionHW {
@@ -100,24 +180,25 @@ p {
 #fire {
 	z-index: -5;
 	width: 100%;
-//	height: 50%;
-//	background-color: green;
+	z-index: -5;
+	width: 100%;
+	background-color: #d9ebfd;	
 }
 
-#fireText, #nextText {color: #fff; text-shadow: 1px 1px #000;}
-
-#fireText{}
+#fireText, #nextText {
+	color: #f1f2f2;
+	text-shadow: 1px 1px #2f3132;
+	background-color: #31689b;
+}
 
 #next {
 	z-index: -5;
 	width: 100%;
-//	height: 50%;
-//	background-color: blue;
+	background-color: #d9ebfd;
 }
 
 #nextData, #fireData {
 	width: 100%;
-//	height: 50%;
 	overflow: auto;
 	/* Firefox */
 	height: -moz-calc(50% - 50px);
@@ -127,24 +208,25 @@ p {
 	height: -o-calc(50% - 50px);
 	/* Standard */
 	height: calc(50% - 50px);
-
 }
 
 .tBorder {
-//    border-top: 1px black solid;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #2f3132 solid;
 }
 
 .right {float: right;}
-.red {text-shadow: 1px 1px red;}
+
+.red {text-shadow: 1px 1px #c92e25;}
+
 .rFire {
-	background-image: url("/images/small_fire.png");
+	background-image: url("/images/test/fire1.png");
     background-repeat: repeat-x;
-	background-size: 100px 10px;
+	background-size: 100px 40px;
 	background-position: bottom;
 	z-index: -5;
 }
-.green {text-shadow: 1px 1px green;}
+.green {text-shadow: 1px 1px #387b26;}
+
 .gRock {
 	background-image: url("/images/rocks3.png");
     background-repeat: repeat-x;
@@ -155,12 +237,13 @@ p {
 .smallFont {font-size: smaller;}
 
 .sTitles {
-	background-color: #4A92C1;
+	background-color: #31689b;
 	font-family: OpenSans-Bold;
 }
 
 .fRow {
 	width: 98%;
+	background-color: #d9ebfd;
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -170,7 +253,7 @@ p {
 
 .fRowE {
 	width: 98%;
-	background-color: lightgray;
+	background-color: #b0b1b2;
 	color: #000;
 	display: inline-block;
 	padding-left: 10px;
@@ -209,9 +292,17 @@ p {
 
 .title {
     text-align: center;
-	color: #fff;
+	color: #f1f2f2;
 	font-family: OpenSans-Bold;
-	background-color: #000;
+	background-color: #2f3132;
     font-size: 18px;
     line-height: 24px;
+}
+
+.titleBG{
+	background-color: #31689b;
+}
+
+#sectionTitle {
+	background-color: #31689b;	
 }
