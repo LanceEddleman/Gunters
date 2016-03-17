@@ -1,18 +1,18 @@
-// googlesheet old datasource ID: 367ebea1-f8f7-4e1a-b132-ab32bafca57f
-// box excel file datasouce ID: 8cc7041a-892b-452b-9243-27528c9d1563
 // Variables
     console.debug();
 //    var dataSourceID = 'qasi';
-    var sectionTitle = '<div class="tableHeader title"><table id="dataTable"><tr><td><div class="wsquad">Squad</div></td><td><div class="wstatus">Status</div></td><td><div class="wjira">Jira #</div></td><td><div class="wsummary">Summary</div></td><td><div class="wnotes">Notes</div></td><td><div class="wreason">Reason</div></td><td><div class="wsprint">Sprint</div></td><td><div class="wtest">Left 2 Test</div></td></tr></table></div>';
-    var fsquad = '<div class="tableRows"><table><tr><td><div class="wsquad">';
-	var fstatus = '</div></td><td><div class="wstatus">';
-	var fjira = '</div></td><td><div class="wjira">';
-	var fsummary = '</div></td><td><div class="wsummary">';
-	var fnotes = '</div></td><td><div class="wnotes">';
-	var freason = '</div></td><td><div class="wreason">';
-	var fsprint = '</div></td><td><div class="wsprint">';
-	var ftest = '</div></td><td><div class="wtest">';
-	var fend = '</div></td></tr></table></div>';
+    var sectionTitle = '<div id="sectionTitle"><div class="wsquad">Squad</div><div class="wstatus">Status</div><div class="wjira">Jira #</div><div class="wsummary">Summary</div><div class="wnotes">Notes</div><div class="wreason">Reason</div><div class="wsprint">Sprint</div><div class="wtest">Left 2 Test</div></div>';
+    //var dataRow = '<div class="tableRows"><div class="wsquad"></div><div class="wstatus"></div><div class="wjira"></div><div class="wsummary"></div><div class="wnotes"></div><div class="wreason"></div><div class="wsprint"></div><div class="wtest"></div></div>';
+    //var squad, status, jira, summary, notes, reason, sprint, test = "";
+ //    var fsquad = '<div class="tableRows"><div class="wsquad">';
+	// var fstatus = '</div><div class="wstatus">';
+	// var fjira = '</div><div class="wjira">';
+	// var fsummary = '</div><div class="wsummary">';
+	// var fnotes = '</div><div class="wnotes">';
+	// var freason = '</div><div class="wreason">';
+	// var fsprint = '</div><div class="wsprint">';
+	// var ftest = '</div><div class="wtest">';
+	// var fend = '</div></table></div>';
     var titleText = 'Make a selection';
     var groupTitle = '<div>' + titleText + '</div>';
     var fireDiv = $("#fire");
@@ -39,7 +39,7 @@ var today = new Date();
 		var SL = $("#sprints"); // sprintlist
 		var slc = 2; // sprint list counter
 
-		domo.get('data/v1/qasi').then(function(qasi){
+		domo.get('/data/v1/qasi?orderby=sprint ascending').then(function(qasi){
 			console.log("qasi", qasi);
 			qasi.forEach(function(item) {
 				console.log(item);
@@ -82,9 +82,9 @@ var today = new Date();
 
 // Show Slection
 	function showSelection(status,num) {
+		var rCount = 1;
 		var sprintNo = document.getElementById("sprints").value;
 		var sprint = $('#sprints :selected').text();
-		// console.log('sprint: ' + sprint + ' status: ' + status + ' num: ' + num);
 		console.log('sprintNo: ' + sprintNo + ' sprint: ' + sprint + ' status: ' + status + ' num: ' + num);
 		document.getElementById("fireText").innerHTML = sectionTitle;
 
@@ -95,8 +95,14 @@ var today = new Date();
 					rCount = 0;
 					qasi.forEach(function(item) {
 						console.log(item);
-						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-						rCount = rCount+1;
+						if(rCount % 2 === 0) {
+							fireText.append('<div class="tableRows fRowE"><div class="wsquad">' + item.squad + '&nbsp;</div><div class="wstatus">' + item.status + '&nbsp;</div><div class="wjira">' + item.jira + '&nbsp;</div><div class="wsummary">' + item.summary + '&nbsp;</div><div class="wnotes">' + item.notes + '&nbsp;</div><div class="wreason">' + item.reason + '&nbsp;</div><div class="wsprint">' + item.sprint + '&nbsp;</div><div class="wtest">' + item.test + '&nbsp;</div></div>');
+							rCount = rCount+1;
+						}
+						else {
+							fireText.append('<div class="tableRows fRow"><div class="wsquad">' + item.squad + '&nbsp;</div><div class="wstatus">' + item.status + '&nbsp;</div><div class="wjira">' + item.jira + '&nbsp;</div><div class="wsummary">' + item.summary + '&nbsp;</div><div class="wnotes">' + item.notes + '&nbsp;</div><div class="wreason">' + item.reason + '&nbsp;</div><div class="wsprint">' + item.sprint + '&nbsp;</div><div class="wtest">' + item.test + '&nbsp;</div></div>');
+							rCount = rCount+1;
+						}
 			       });
 				console.log('Rows: ' + rCount);	
 				});
@@ -106,8 +112,14 @@ var today = new Date();
 					rCount = 0;
 					qasi.forEach(function(item) {
 						console.log(item);
-						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-						rCount = rCount+1;
+						if(rCount % 2 === 0) {
+							fireText.append('<div class="tableRows fRowE"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
+						else {
+							fireText.append('<div class="tableRows fRow"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
 			       });
 				console.log('Rows: ' + rCount);	
 				});
@@ -120,8 +132,14 @@ var today = new Date();
 					rCount = 0;
 					qasi.forEach(function(item) {
 						console.log(item);
-						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-						rCount = rCount+1;
+						if(rCount % 2 === 0) {
+							fireText.append('<div class="fRowE"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
+						else {
+							fireText.append('<div class="tableRows fRow"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
 			       });
 				console.log('Rows: ' + rCount);	
 				});
@@ -132,8 +150,14 @@ var today = new Date();
 					rCount = 0;
 					qasi.forEach(function(item) {
 						console.log(item);
-						fireText.append(fsquad + item.squad + fstatus + item.status + fjira + item.jira + fsummary + item.summary + fnotes + item.notes + freason + item.reason + fsprint + item.sprint + ftest + item.test + fend);
-						rCount = rCount+1;
+						if(rCount % 2 === 0) {
+							fireText.append('<div class="tableRows fRowE"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
+						else {
+							fireText.append('<div class="tableRows fRow"><div class="wsquad">' + item.squad + '</div><div class="wstatus">' + item.status + '</div><div class="wjira">' + item.jira + '</div><div class="wsummary">' + item.summary + '</div><div class="wnotes">' + item.notes + '</div><div class="wreason">' + item.reason + '</div><div class="wsprint">' + item.sprint + '</div><div class="wtest">' + item.test + '</div></div>');
+							rCount = rCount+1;
+						}
 			       });
 				console.log('Rows: ' + rCount);	
 				});

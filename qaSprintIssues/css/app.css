@@ -113,15 +113,6 @@ p {
     width: 100%;
 }
 
-.tableHeader {
-    font-size: bigger;
-    font-weight: bolder;
-}
-
-.tableRows {
-    font-weight: normal;
-}
-
 #fire {
     height: 540px;
     width: 1165px;
@@ -129,14 +120,11 @@ p {
 }
 
 #fireText {
-	padding-top: 10px;
-	padding-right: 5px;
 	padding-bottom: 10px;
-	padding-left: 5px;
 	color: #000;
     overflow: auto;
-    height: 87.4%;
-    width: 99.2%;
+    height: 100%;
+    width: 100%;
 }
 
 .pTop {
@@ -148,12 +136,12 @@ p {
     padding-top: 10px;
     padding-bottom: 9px;
     text-align: center;
-	color: #000;
+    color: #000;
     font-family: OpenSans-Bold;
-
 	font-weight: bold;
     border-bottom: 1px solid black;
 }
+
 .infoTitle {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -225,26 +213,51 @@ button {
 	border-radius:7px;
 	font-size: 16px;
 }
-
 /* Navigation End */
 
-.intro {
-    font-size: 90px;
-    font-weight: 700;
-	text-align: center;
-	line-height: 150px;
+#sectionTitle {
+	width: 100%;
+	height: 20px;
+    border-bottom: 1px solid black;
+    font-family: OpenSans-Bold;
+	line-height: 20px;
+}
+
+.fRow {
+	width: 100%;
+	background-color: #f1f2f2;
+	display: inline-block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.fRowE {
+	width: 100%;
+	background-color: #b0b1b2;
+	color: #000;
+	display: inline-block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.tableHeader {
+    font-weight: bolder;
+}
+
+.tableRows {
+    font-weight: normal;
 }
 
 
 /* Field Widths */
-.wsquad {width: 120px;}
-.wstatus {width: 120px}
-.wjira {width: 100px;}
-.wsummary {width: 175px;}
-.wnotes {width: 175px;}
-.wreason {width: 175px;}
-.wsprint {width: 120px;}
-.wtest {width: 375px;}
+.wsquad {width: 10%; float: left; text-align: center; white-space: nowrap;}
+.wstatus {width: 10%; float: left; text-align: center; white-space: nowrap;}
+.wjira {width: 10%; float: left; text-align: center; white-space: nowrap;}
+.wsummary {width: 20%; float: left; text-align: left;}
+.wnotes {width: 20%; float: left; text-align: left;}
+.wreason {width: 10%; float: left; text-align: left;}
+.wsprint {width: 10%; float: left; text-align: left; white-space: nowrap;}
+.wtest {width: 10%; float: left; text-align: left;}
 
 /* Colors */
 .domoBlue {color: #99ccee;}
@@ -256,3 +269,27 @@ button {
 .red {text-shadow: 0.5px 0px red;}
 .green {text-shadow: 0.5px 0px green;}
 .oddRow {background-color: lightgrey;}
+
+/* Traditional clearfix */
+.clearfix:after {
+//    content: ".";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+/* Custom CSS for the page layout */
+.columns .column1 {float: left;}
+.columns .column2 {float: left;}
+
+.intro {
+    font-size: 90px;
+    font-weight: 700;
+	text-align: center;
+	line-height: 150px;
+}
